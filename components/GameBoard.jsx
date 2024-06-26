@@ -5,20 +5,21 @@ const initailGameBoard = [
   [null, null, null],
   [null, null, null],
 ];
-export default function GameBoard() {
-  const [gameBoard, setGameBoard] = useState(initailGameBoard);
+export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
+  //   const [gameBoard, setGameBoard] = useState(initailGameBoard);
 
-  function handleSelectSquare(rowIndex, colIndex) {
-    setGameBoard((previousGameBoard) => {
-      const newGameBoard = [
-        ...previousGameBoard.map((innerArray) => [...innerArray]),
-      ];
+  //   function handleSelectSquare(rowIndex, colIndex) {
+  //     setGameBoard((previousGameBoard) => {
+  //       const newGameBoard = [
+  //         ...previousGameBoard.map((innerArray) => [...innerArray]),
+  //       ];
 
-      newGameBoard[rowIndex][colIndex] = "X";
+  //       newGameBoard[rowIndex][colIndex] = activePlayerSymbol;
 
-      return newGameBoard;
-    });
-  }
+  //       return newGameBoard;
+  //     });
+  //     onSelectSquare(rowIndex, colIndex);
+  // }
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (
